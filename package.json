@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "tailwindcss": "^1.8.12"
+  },
+  "name": "vue3",
+  "version": "1",
+  "main": "index.js",
+  "license": "MIT"
+}

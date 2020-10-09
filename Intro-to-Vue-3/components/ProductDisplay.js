@@ -45,6 +45,14 @@ app.component('product-display', {
           :disabled="!inStock" 
           v-on:click="removeFromCart">
           Remove from Cart
+         </button>
+
+         <button 
+         class="button" 
+         :class="{ disabledButton: !inStock }" 
+         :disabled="!inStock" 
+         v-on:click="sendEmail">
+         Order
         </button>
   
         </div>
@@ -82,6 +90,12 @@ app.component('product-display', {
         removeFromCart() {
             this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
         },
+
+        sendEmail() {
+            window.open('mailto:info@bitterend.io?subject=Zavazna objednavka&body=odeslanim emailu potvrdite zavaznou objednavku {{ cart }}');
+
+        },
+
         updateVariant(index) {
             this.selectedVariant = index
         },

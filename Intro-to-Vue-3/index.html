@@ -15,6 +15,7 @@
     <div class="nav-bar"></div>
 
     <div class="cart">Cart({{ cart.length }})</div>
+
     <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
   </div>
 
@@ -23,7 +24,10 @@
 
   <!-- Import Components -->
   <script src="./components/ProductDisplay.js"></script>
-  <script src="./components/ReviewForm.js"></script>
+  <div>
+    <script src="./components/ReviewForm.js"></script>
+  </div>
+
   <script src="./components/ReviewList.js"></script>
 
 

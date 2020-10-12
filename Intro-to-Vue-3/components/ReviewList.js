@@ -1,11 +1,11 @@
 app.component('review-list', {
-    props: {
-      reviews: {
-        type: Array,
-        required: true
-      }
-    },
-    template:
+  props: {
+    reviews: {
+      type: Array,
+      required: true
+    }
+  },
+  template:
     /*html*/
     `
     <div class="review-container">
@@ -20,4 +20,4 @@ app.component('review-list', {
       </ul>
     </div>
   `
-  })
+})

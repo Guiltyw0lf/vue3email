@@ -80,8 +80,13 @@ app.component('product-display', {
                 },
             ],
             reviews: [],
+
+
         }
+
     },
+
+
     methods: {
         addToCart() {
             this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
@@ -92,7 +97,30 @@ app.component('product-display', {
         },
 
         sendEmail() {
-            window.open('mailto:info@bitterend.io?subject=Zavazna objednavka&body=odeslanim emailu potvrdite zavaznou objednavku {{ cart }}');
+            alert("vase objednavka byla odeslana");
+            axios.post("https://mandrillapp.com/api/1.0/messages/send.json", JSON.stringify({
+                key: "FH5wdRhRxPYJIilzrdl36g",
+                message: {
+                    html: "<p>Vazeny zakazniku vase objednavka {{cart}} byla dorucena <br> Dekujeme</p>",
+                    text: "Toto je testovaci objednavka",
+                    subject: "potvrzeni objednavky",
+                    from_email: "duch@vanoce.cz",
+                    from_name: "Vue Mastery Socks",
+                    to: [{
+                        email: "info@bitterend.io",
+                        name: "Pitomci z bitterendu",
+                        type: "to"
+                    }],
+                    headers: {
+                        ReplyTo: "duch@vanoce.cz"
+                    },
+                    important: false
+                }
+            }), {
+                "headers": {
+                    "content-type": "application/json",
+                },
+            });
 
         },
 

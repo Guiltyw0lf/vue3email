@@ -180,3 +180,23 @@ ul {
     width: 90%;
   }
 }
+
+table {
+  width: 100%;
+  text-align: center;
+  border: 2px solid black;
+  margin-top: 30px;
+}
+
+table tr.head {
+  background-color: LightGray;
+}
+
+form {
+  display: flex;
+}
+
+input.submit {
+  background-color: orange;
+  margin: 30px;
+}
